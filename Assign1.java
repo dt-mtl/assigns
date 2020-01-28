@@ -32,7 +32,8 @@ public class Assign1 {
 					System.out.println();
 					break;
 				case 2:
-					System.out.println("option 2");
+					System.out.println("prompt for password\n\ncheck serial number\n\nthen update information of the appliance addressed "
+							+"display info prompt and change accordingly.");
 					System.out.println();
 					break;
 				case 3:
