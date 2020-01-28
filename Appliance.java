@@ -10,7 +10,8 @@ public class Appliance {
 	private String brand;
 	private static long serialNum=1000000;
 	private double price;
-	
+	private final String[] types= {"Air Conditioner","Fridge","Washer","Dryer","Freezer","Stove","Dishwasher","Water Heaters"
+			+"Microwave"};
 	
 	//serial number counter
 	{
@@ -21,7 +22,7 @@ public class Appliance {
 	
 	//default
 	Appliance(){
-		this.type="Air Conditioner";
+		this.type=types[0];
 		this.brand="Samsung";
 		this.price=1.00;
 		
@@ -43,7 +44,9 @@ public class Appliance {
 	
 	//mutators
 	public void setType(String type) {
+		//check the type is correct
 		this.type=type;
+		
 	}
 	public void setBrand(String brand) {
 		this.brand=brand;
