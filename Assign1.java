@@ -5,36 +5,59 @@
 // -----------------------------------------------------
 import java.util.Scanner;
 public class Assign1 {
-	final String pass="c249"; //password 
+	final String pass="c249"; //password
+
 	public static void main(String[] args) {
-		
-		Scanner input=new Scanner(System.in); 
+
+		Scanner input=new Scanner(System.in);
 		//required variables
 		int numAppli; // number of appliances the store can hold
 		int option;
 		int attempts=0;
-		
+		String text;
+
 		//welcome message
 		welcome();
+
+		System.out.println("Currently there are "+Appliance.findNumberOfCreatedAppliances()+" Appliances");
 		System.out.print("How many appliances will your store hold? ");
 		numAppli=input.nextInt();
-		Appliance[] inventory= new Appliance[numAppli]; //appliance inventory array
-		System.out.println();
-		
+
+		Appliance[] inventory = new Appliance[numAppli]; //appliance inventory array
+		for(int i =0; i< inventory.length; i++) {     //must create appliances otherwise this will give null error
+			inventory[i] = new Appliance();
+		}
+		System.out.println("You have created "+Appliance.findNumberOfCreatedAppliances() +" Appliances: ");
+
+
+		/*
 		do {
-		
+
 			prompt(); // first prompt
+
 			option=input.nextInt();
-			System.out.println();
+
+
 			switch(option) {
 				case 1:
 					System.out.println("\noption 1");
+
+					System.out.println();
+					System.out.println("prompt for password\n\ncheck serial number\n\nthen update information of the appliance addressed "
+							+"display info prompt and change accordingly.");
+					System.out.print("Change the type of your appliance, type the appliance number: ");
+					option=input.nextInt();
+					input.nextLine();
+					System.out.print("\nType the Appliance type you wish to input: ");
+					text=input.nextLine();
+					input.nextLine();
+					System.out.println("why is this?");
+					inventory[option].setType(text);
+
 					System.out.println();
 					break;
 				case 2:
-					System.out.println("prompt for password\n\ncheck serial number\n\nthen update information of the appliance addressed "
-							+"display info prompt and change accordingly.");
-					System.out.println();
+					System.out.print("option 2");
 					break;
 				case 3:
 					System.out.println("All appliances of this exact same brand");
@@ -52,36 +75,36 @@ public class Assign1 {
 					System.out.println("Please enter a valid option between 1-5");
 					System.out.println();
 			}
-			
+
 		}while(attempts<=12 && option!= 5);
-		
-		
-	
+		*/
+		input.close();
+
 	}
-	
+
 	//banner display message program
 	public static void welcome() {
 		System.out.println("************************************************************************************************************"
-						 + "\n*                                WELCOME TO THE APPLIANCE DIRECTORY                                        *" 
-				         + "\n************************************************************************************************************");
+				+ "\n*                                WELCOME TO THE APPLIANCE DIRECTORY                                        *"
+				+ "\n************************************************************************************************************");
 	}
 	//options prompt
 	public static void prompt() {
-		System.out.print("What do you want to do?\r\n" + 
-				"\t1. Enter new appliances (password required)\r\n" + 
-				"\t2. Change information of an appliance (password required)\r\n" + 
-				"\t3. Display all appliances by a specific brand\r\n" + 
-				"\t4. Display all appliances under a certain a price.\r\n" + 
-				"\t5. Quit\r\n" + 
+		System.out.print("What do you want to do?\r\n" +
+				"\t1. Enter new appliances (password required)\r\n" +
+				"\t2. Change information of an appliance (password required)\r\n" +
+				"\t3. Display all appliances by a specific brand\r\n" +
+				"\t4. Display all appliances under a certain a price.\r\n" +
+				"\t5. Quit\r\n" +
 				"Please enter your choice > ");
 	}
 	//information menu
 	public static void appliInfo() {
-		System.out.print("What information would you like to change?\r\n" + 
-				"\t1. brand\r\n" + 
-				"\t2. type\r\n" + 
-				"\t3. price\r\n" + 
-				"\t4. Quit\r\n" + 
+		System.out.print("What information would you like to change?\r\n" +
+				"\t1. brand\r\n" +
+				"\t2. type\r\n" +
+				"\t3. price\r\n" +
+				"\t4. Quit\r\n" +
 				"Enter your choice > ");
 	}
 	//password validity check
