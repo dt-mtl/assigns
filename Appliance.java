@@ -2,7 +2,7 @@
 import java.util.Scanner;
 // -----------------------------------------------------
 // Assignment 1
-// This particular program creates an appliance item which will then be used and intergrated
+// This particular program creates an appliance item which will then be used and integrated
 // Written by: Daniel Torres 40101143
 // -----------------------------------------------------
 public class Appliance {
@@ -113,13 +113,7 @@ public class Appliance {
 			return false;
 	}
 
-	//Find appliances by serial number
-	public static void findApplianceBy(){
 
-	}
-	// find cheaper than the other appliances
-	public static void findCheaperThan(double expensive){
 
-	}
 
 }
